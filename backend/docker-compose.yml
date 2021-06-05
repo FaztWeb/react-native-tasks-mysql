@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: tasksdb
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: faztpassword
+      MYSQL_DATABASE: tasksdb
+      MYSQL_USER: fazt
+      MYSQL_PASSWORD: faztpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./scripts/db.sql:/docker-entrypoint-initdb.d/1.sql"
