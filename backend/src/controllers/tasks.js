@@ -29,7 +29,7 @@ export const getTask = async (req, res) => {
   const rows = await connection.execute("SELECT * FROM tasks WHERE id = ?", [
     req.params.id,
   ]);
-  res.json(rows[0]);
+  res.json(rows[0][0]);
 };
 
 export const deleteTask = async (req, res) => {
